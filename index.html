@@ -2,17 +2,20 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Things Redirect</title>
+<title>Loading Things...</title>
 <script>
-// Read the "data" param from URL and redirect to things:///json
 const params = new URLSearchParams(window.location.search);
 const data = params.get('data');
 if (data) {
+  // data arrives decoded by the browser, re-encode for things:// URL
   window.location.href = 'things:///json?data=' + encodeURIComponent(data);
 } else {
-  document.body.innerText = 'No task data provided.';
+  document.body.innerText = 'No task data.';
 }
 </script>
 </head>
-<body>Redirecting to Things...</body>
+<body style="font-family:system-ui;text-align:center;padding:60px">
+<p>Opening Things...</p>
+<p style="color:#888;font-size:14px">If nothing happens, make sure Things 3 is installed.</p>
+</body>
 </html>
