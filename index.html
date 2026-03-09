@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Things Redirect</title>
+<script>
+// Read the "data" param from URL and redirect to things:///json
+const params = new URLSearchParams(window.location.search);
+const data = params.get('data');
+if (data) {
+  window.location.href = 'things:///json?data=' + encodeURIComponent(data);
+} else {
+  document.body.innerText = 'No task data provided.';
+}
+</script>
+</head>
+<body>Redirecting to Things...</body>
+</html>
